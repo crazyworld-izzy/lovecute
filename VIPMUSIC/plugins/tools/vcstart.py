@@ -131,7 +131,6 @@ async def stop_group_call(c: Client, m: Message):
     if assistant is None:
         await app.send_message(chat_id, "🍷 𝑨𝒔𝒔𝒊𝒔𝒕𝒂𝒏𝒕 𝒌𝒐𝒍𝒂𝒓𝒖  𝑨𝒂𝒊𝒕𝒉𝒂𝒏 𝒅𝒂 𝒔𝒂𝒎𝒃𝒖 𝒎𝒂𝒗𝒂𝒏𝒆𝒂 😻")
         return
-    msg = await app.send_message(chat_id, "🤧💫 𝑉𝑐 𝐸𝑣𝑎𝑛𝑑𝑎 𝐸𝑛𝑑 𝑃𝑎𝑛𝑛𝑢𝑛𝑎𝑡ℎ𝑢 🥹🤌🏻")
     try:
         if not (
             group_call := (
@@ -142,7 +141,6 @@ async def stop_group_call(c: Client, m: Message):
         ):
             return
         await assistant.invoke(DiscardGroupCall(call=group_call))
-        await msg.edit_text("🤧💫 𝑆𝑜𝑛𝑔 𝐸𝑣𝑎𝑛𝑑𝑎 𝐸𝑛𝑑 𝑃𝑎𝑛𝑛𝑢𝑛𝑎𝑡ℎ𝑢 🥹🤌🏻")
     except Exception as e:
         if "GROUPCALL_FORBIDDEN" in str(e):
             try:
